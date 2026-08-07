@@ -1577,7 +1577,7 @@
   </script>
 
   <audio id="weddingMusic" loop preload="auto">
-    <source src="nahanap-kita.mp3" type="audio/mpeg">
+    <source src="./nahanap-kita.mp3" type="audio/mpeg">
   </audio>
 
   <button id="musicButton" class="music-button" type="button" aria-label="Play our song">
@@ -1585,7 +1585,57 @@
   </button>
 
   <script>
-  const revealElements = document.querySelectorAll(".reveal");
+    /* =======================================================
+       MUSIC PLAYER
+       ======================================================= */
+    const weddingMusic = document.getElementById("weddingMusic");
+    const musicButton = document.getElementById("musicButton");
+
+    function setMusicButtonPlaying(isPlaying) {
+      if (isPlaying) {
+        musicButton.textContent = "Ⅱ Pause Our Song";
+        musicButton.setAttribute("aria-label", "Pause our song");
+        musicButton.classList.add("playing");
+      } else {
+        musicButton.textContent = "♫ Play Our Song";
+        musicButton.setAttribute("aria-label", "Play our song");
+        musicButton.classList.remove("playing");
+      }
+    }
+
+    musicButton.addEventListener("click", function () {
+      if (weddingMusic.paused) {
+        weddingMusic.play()
+          .then(function () {
+            setMusicButtonPlaying(true);
+          })
+          .catch(function (error) {
+            console.error("Music could not be played:", error);
+            alert("The song could not be played. Please tap the button again.");
+          });
+      } else {
+        weddingMusic.pause();
+        setMusicButtonPlaying(false);
+      }
+    });
+
+    weddingMusic.addEventListener("play", function () {
+      setMusicButtonPlaying(true);
+    });
+
+    weddingMusic.addEventListener("pause", function () {
+      setMusicButtonPlaying(false);
+    });
+
+    weddingMusic.addEventListener("error", function () {
+      console.error("Unable to load nahanap-kita.mp3", weddingMusic.error);
+    });
+
+
+    /* =======================================================
+       SCROLL REVEAL
+       ======================================================= */
+    const revealElements = document.querySelectorAll(".reveal");
 
   const revealObserver = new IntersectionObserver(
     function(entries, observer) {
@@ -1606,7 +1656,5 @@
   });
 </script>
 
-</body>
-  
 </body>
 </html>
