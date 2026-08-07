@@ -1,1 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Christine & Von — Wedding Invitation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       COLOR PALETTE
+       ========================================================= */
+
+    :root {
+      --rust: #B65A3A;
+      --terracotta: #D47A5A;
+      --sage: #9A8F72;
+      --olive: #6F7056;
+      --taupe: #D6C3A5;
+      --beige: #E7D8C5;
+      --blush: #E8C9C5;
+      --champagne: #EADCC6;
+      --ivory: #F7F3EA;
+      --cream: #FBF8F2;
+      --brown: #5A4233;
+      --dark-brown: #493429;
+      --gold: #C49A52;
+      --white: #FFFFFF;
+    }
+
+    /* =========================================================
+       BASIC RESET
+       ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--brown);
+      font-family: "Cormorant Garamond", serif;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* =========================================================
+       FONTS
+       ========================================================= */
+
+    .script {
+      font-family: "Allura", cursive;
+    }
+
+    .serif {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .sans {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    /* =========================================================
+       GENERAL
+       ========================================================= */
+
+    .section {
+      padding: 90px 20px;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--rust);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 0.95;
+      font-weight: 500;
+      color: var(--brown);
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .ornament {
+      color: var(--rust);
+      font-size: 28px;
+      margin: 18px 0;
+    }
+
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 243, 234, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(182, 90, 58, 0.22);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .monogram {
+      font-family: "Allura", cursive;
+      font-size: 38px;
+      color: var(--rust);
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown);
+    }
+
+    .nav-links a:hover {
+      color: var(--rust);
+    }
+
+    .nav-rsvp {
+      border: 1px solid var(--rust);
+      border-radius: 30px;
+      padding: 10px 17px;
+      color: var(--rust) !important;
+    }
+
+    .nav-rsvp:hover {
+      background: var(--rust);
+      color: white !important;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(154,143,114,.13), transparent 25%),
+        radial-gradient(circle at 90% 85%, rgba(232,201,197,.18), transparent 25%),
+        var(--ivory);
+      padding: 80px 20px;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--rust);
+    }
+
+    .hero-ornament {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin: 25px 0 15px;
+    }
+
+    .hero-ornament span.line {
+      width: 55px;
+      height: 1px;
+      background: var(--rust);
+    }
+
+    .hero-ornament span.star {
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+    .names {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(72px, 14vw, 145px);
+      line-height: 0.75;
+      font-weight: 500;
+      color: var(--brown);
+    }
+
+    .names .amp {
+      font-family: "Allura", cursive;
+      font-size: 0.55em;
+      color: var(--rust);
+      display: block;
+      line-height: 0.9;
+      margin: 8px 0;
+    }
+
+    .getting-married {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--rust);
+      margin-top: 30px;
+    }
+
+    .hero-details {
+      border-top: 1px solid rgba(196,154,82,.55);
+      border-bottom: 1px solid rgba(196,154,82,.55);
+      max-width: 500px;
+      margin: 30px auto 0;
+      padding: 20px 15px;
+    }
+
+    .hero-date {
+      font-size: 29px;
+      font-weight: 600;
+      color: var(--brown);
+    }
+
+    .hero-place {
+      margin-top: 7px;
+      font-size: 21px;
+      color: var(--brown);
+    }
+
+    .hero-time {
+      margin-top: 8px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--rust);
+    }
+
+    .button {
+      display: inline-block;
+      border: none;
+      background: var(--rust);
+      color: white;
+      padding: 15px 28px;
+      border-radius: 30px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .button:hover {
+      background: var(--dark-brown);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       BOTANICAL DECOR
+       ========================================================= */
+
+    .leaf-decoration {
+      position: absolute;
+      color: var(--sage);
+      opacity: .45;
+      pointer-events: none;
+      font-size: 100px;
+      line-height: 1;
+    }
+
+    .leaf-left {
+      left: -15px;
+      top: 50px;
+      transform: rotate(-20deg);
+    }
+
+    .leaf-right {
+      right: -15px;
+      bottom: 50px;
+      transform: rotate(160deg);
+    }
+
+    /* =========================================================
+       WELCOME
+       ========================================================= */
+
+    .welcome {
+      background: var(--beige);
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .photo-frame {
+      position: relative;
+      padding: 12px;
+    }
+
+    .photo-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--rust);
+      transform: translate(-10px, -10px);
+      pointer-events: none;
+    }
+
+    .couple-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 15px 35px rgba(73,52,41,.14);
+    }
+
+    .welcome-text h2 {
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: .95;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .welcome-text p {
+      font-size: 21px;
+      line-height: 1.55;
+      color: var(--brown);
+    }
+
+    /* =========================================================
+       DETAILS
+       ========================================================= */
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 50px;
+    }
+
+    .detail-card {
+      background: var(--cream);
+      border: 1px solid rgba(182,90,58,.25);
+      box-shadow: 0 15px 35px rgba(90,66,51,.08);
+      overflow: hidden;
+    }
+
+    .detail-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .detail-content {
+      padding: 30px 25px;
+      text-align: center;
+    }
+
+    .detail-icon {
+      font-size: 24px;
+      color: var(--rust);
+    }
+
+    .detail-content h3 {
+      font-size: 31px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .detail-place {
+      font-size: 22px;
+      margin-top: 8px;
+    }
+
+    .detail-time {
+      margin-top: 12px;
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--rust);
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 18px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--rust);
+      text-decoration: underline;
+    }
+
+    /* =========================================================
+       TIMELINE
+       ========================================================= */
+
+    .timeline-section {
+      background: var(--rust);
+      color: white;
+    }
+
+    .timeline-section .section-label {
+      color: var(--champagne);
+    }
+
+    .timeline-section .section-title {
+      color: white;
+    }
+
+    .timeline {
+      max-width: 620px;
+      margin: 55px auto 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 55px;
+      padding-bottom: 35px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 34px;
+      bottom: 0;
+      width: 1px;
+      background: rgba(234,220,198,.65);
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+
+    .timeline-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--champagne);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+    }
+
+    .timeline-time {
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      letter-spacing: .15em;
+      font-weight: 700;
+      color: var(--champagne);
+    }
+
+    .timeline-event {
+      font-size: 29px;
+      margin-top: 4px;
+    }
+
+    /* =========================================================
+       PRINCIPAL SPONSORS ATTIRE
+       ========================================================= */
+
+    .attire-section {
+      background: var(--ivory);
+    }
+
+    .attire-intro {
+      max-width: 700px;
+      margin: 15px auto 0;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .attire-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 50px;
+    }
+
+    .attire-card {
+      background: #F6EEE4;
+      border: 1px solid rgba(182,90,58,.25);
+      padding: 35px 30px;
+      text-align: center;
+    }
+
+    .attire-card h3 {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .attire-card p {
+      font-size: 19px;
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+
+    .color-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .color {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(90,66,51,.15);
+    }
+
+    .attire-note {
+      margin-top: 30px;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      font-style: italic;
+      color: var(--brown);
+    }
+
+    /* =========================================================
+       RSVP
+       ========================================================= */
+
+    .rsvp-section {
+      background: var(--beige);
+    }
+
+    .rsvp-box {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .rsvp-title {
+      font-size: clamp(48px, 7vw, 70px);
+      line-height: .9;
+      font-weight: 500;
+    }
+
+    .rsvp-copy {
+      font-size: 21px;
+      line-height: 1.5;
+      margin-top: 20px;
+    }
+
+    .rsvp-card {
+      background: var(--cream);
+      border: 1px solid rgba(182,90,58,.2);
+      padding: 50px 35px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(90,66,51,.07);
+    }
+
+    .rsvp-card p {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* =========================================================
+       GIFT GUIDE
+       ========================================================= */
+
+    .gift-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 60px 30px;
+      text-align: center;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .gift-title {
+      font-size: clamp(40px, 6vw, 58px);
+      line-height: .95;
+      font-weight: 500;
+    }
+
+    .gift-copy {
+      max-width: 700px;
+      margin: 25px auto 0;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    .heart {
+      color: var(--rust);
+      font-size: 25px;
+      margin-top: 25px;
+    }
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+
+    .faq-section {
+      background: #F1E7DA;
+    }
+
+    .faq-list {
+      max-width: 850px;
+      margin: 45px auto 0;
+      border-top: 1px solid rgba(182,90,58,.35);
+      border-bottom: 1px solid rgba(182,90,58,.35);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(182,90,58,.25);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      cursor: pointer;
+      color: var(--brown);
+    }
+
+    .faq-question span {
+      font-size: 21px;
+      font-weight: 600;
+    }
+
+    .faq-icon {
+      font-family: "Montserrat", sans-serif;
+      font-size: 22px;
+      color: var(--rust);
+      transition: transform .25s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 40px 22px 5px;
+      font-size: 19px;
+      line-height: 1.55;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-thank {
+      font-family: "Allura", cursive;
+      color: var(--champagne);
+      font-size: 62px;
+    }
+
+    .footer-small {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 10px;
+      font-weight: 700;
+      margin-top: 18px;
+    }
+
+    .footer-date {
+      font-size: 30px;
+      margin-top: 8px;
+    }
+
+    .footer-names {
+      font-family: "Allura", cursive;
+      color: var(--champagne);
+      font-size: 58px;
+      margin-top: 20px;
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 768px) {
+
+      .section {
+        padding: 70px 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-inner {
+        padding: 13px 16px;
+      }
+
+      .monogram {
+        font-size: 34px;
+      }
+
+      .hero {
+        min-height: 88vh;
+        padding: 65px 18px;
+      }
+
+      .hero-place {
+        font-size: 18px;
+      }
+
+      .hero-date {
+        font-size: 25px;
+      }
+
+      .welcome-grid,
+      .details-grid,
+      .attire-grid,
+      .rsvp-box {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome-grid {
+        gap: 50px;
+      }
+
+      .welcome-text {
+        text-align: center;
+      }
+
+      .detail-card img {
+        height: 250px;
+      }
+
+      .rsvp-box {
+        gap: 40px;
+      }
+
+      .rsvp-card {
+        padding: 40px 22px;
+      }
+
+      .timeline {
+        margin-top: 40px;
+      }
+
+      .attire-card {
+        padding: 30px 22px;
+      }
+
+      .faq-question span {
+        font-size: 19px;
+        padding-right: 15px;
+      }
+
+      .faq-answer p {
+        font-size: 18px;
+      }
+
+      .footer-names {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       NAVIGATION
+       ======================================================= -->
+
+  <header class="navbar">
+    <nav class="nav-inner">
+
+      <a href="#home" class="monogram">
+        C & V
+      </a>
+
+      <div class="nav-links">
+        <a href="#details">Details</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#attire">Attire</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#faqs">FAQs</a>
+      </div>
+
+      <a href="#rsvp" class="nav-rsvp sans">
+        RSVP
+      </a>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO / COVER
+         ===================================================== -->
+
+    <section id="home" class="hero">
+
+      <div class="leaf-decoration leaf-left">❧</div>
+      <div class="leaf-decoration leaf-right">❧</div>
+
+      <div class="hero-content">
+
+        <p class="hero-label">
+          Together with their families
+        </p>
+
+        <div class="hero-ornament">
+          <span class="line"></span>
+          <span class="star">✦</span>
+          <span class="line"></span>
+        </div>
+
+        <h1 class="names">
+          Christine
+          <span class="amp">&</span>
+          Von
+        </h1>
+
+        <p class="getting-married">
+          We're Getting Married
+        </p>
+
+        <div class="hero-details">
+
+          <p class="hero-date">
+            November 14, 2026
+          </p>
+
+          <p class="hero-place">
+            National Shrine of Nuestra Señora de Aranzazu
+          </p>
+
+          <p class="hero-time">
+            12:30 PM
+          </p>
+
+        </div>
+
+        <a href="#welcome" class="button">
+          Open Invitation
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WELCOME / COUPLE PHOTO
+         ===================================================== -->
+
+    <section id="welcome" class="section welcome">
+
+      <div class="container">
+
+        <div class="welcome-grid">
+
+          <div class="photo-frame">
+
+            <img
+              src="IMG_20251116_130030749_HDR.jpg"
+              alt="Christine and Von"
+              class="couple-photo"
+            >
+
+          </div>
+
+          <div class="welcome-text">
+
+            <p class="section-label">
+              A Note From The Couple
+            </p>
+
+            <h2>
+              Every love story is beautiful,
+              but ours is our favorite.
+            </h2>
+
+            <p>
+              Thank you for being part of the beginning
+              of our forever. We can't wait to celebrate
+              this beautiful day with you.
+            </p>
+
+            <div class="ornament">
+              ❦
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WEDDING DETAILS
+         ===================================================== -->
+
+    <section id="details" class="section">
+
+      <div class="container">
+
+        <div class="center">
+
+          <p class="section-label">
+            The Celebration
+          </p>
+
+          <h2 class="section-title">
+            Wedding Details
+          </h2>
+
+        </div>
+
+
+        <div class="details-grid">
+
+          <!-- CHURCH -->
+
+          <article class="detail-card">
+
+            <img
+              src="nuestra.jpg"
+              alt="National Shrine of Nuestra Señora de Aranzazu"
+            >
+
+            <div class="detail-content">
+
+              <div class="detail-icon">
+                ♡
+              </div>
+
+              <h3>
+                Ceremony
+              </h3>
+
+              <p class="detail-place">
+                National Shrine of Nuestra Señora de Aranzazu
+              </p>
+
+              <p class="detail-time">
+                12:30 PM
+              </p>
+
+              <p style="margin-top:8px;">
+                San Mateo, Rizal
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- RECEPTION -->
+
+          <article class="detail-card">
+
+            <img
+              src="alfredo.jpg"
+              alt="Alberto's Place"
+            >
+
+            <div class="detail-content">
+
+              <div class="detail-icon">
+                ❦
+              </div>
+
+              <h3>
+                Reception
+              </h3>
+
+              <p class="detail-place">
+                Alberto's Place
+              </p>
+
+              <p class="detail-time">
+                Immediately after the ceremony
+              </p>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Alberto%27s+Place+San+Mateo+Rizal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-link"
+              >
+                View Map
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TIMELINE
+         ===================================================== -->
+
+    <section id="timeline" class="section timeline-section">
+
+      <div class="container">
+
+        <div class="center">
+
+          <p class="section-label">
+            Our Day
+          </p>
+
+          <h2 class="section-title">
+            Celebration Timeline
+          </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+
+            <span class="timeline-number">1</span>
+
+            <p class="timeline-time">
+              11:30 AM
+            </p>
+
+            <h3 class="timeline-event">
+              Guest Arrival
+            </h3>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <span class="timeline-number">2</span>
+
+            <p class="timeline-time">
+              12:30 PM
+            </p>
+
+            <h3 class="timeline-event">
+              Wedding Ceremony
+            </h3>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <span class="timeline-number">3</span>
+
+            <p class="timeline-time">
+              2:30 PM
+            </p>
+
+            <h3 class="timeline-event">
+              Reception
+            </h3>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <span class="timeline-number">4</span>
+
+            <p class="timeline-time">
+              3:00 PM
+            </p>
+
+            <h3 class="timeline-event">
+              Lunch
+            </h3>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <span class="timeline-number">5</span>
+
+            <p class="timeline-time">
+              5:00 PM
+            </p>
+
+            <h3 class="timeline-event">
+              Program
+            </h3>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <span class="timeline-number">6</span>
+
+            <p class="timeline-time">
+              7:00 PM
+            </p>
+
+            <h3 class="timeline-event">
+              Open Dance Floor
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRINCIPAL SPONSORS ATTIRE
+         ===================================================== -->
+
+    <section id="attire" class="section attire-section">
+
+      <div class="container">
+
+        <div class="center">
+
+          <p class="section-label">
+            Principal Sponsors
+          </p>
+
+          <h2 class="section-title">
+            Attire
+          </h2>
+
+          <p class="attire-intro">
+            We would love for our Principal Sponsors to
+            complement our warm, elegant wedding palette.
+          </p>
+
+        </div>
+
+
+        <div class="attire-grid">
+
+          <!-- GENTLEMEN -->
+
+          <div class="attire-card">
+
+            <h3>
+              Gentlemen
+            </h3>
+
+            <div class="color-row">
+
+              <span
+                class="color"
+                style="background:#D6C3A5;"
+                title="Beige"
+              ></span>
+
+              <span
+                class="color"
+                style="background:#E7D8C5;"
+                title="Champagne"
+              ></span>
+
+              <span
+                class="color"
+                style="background:#5A4233;"
+                title="Brown"
+              ></span>
+
+            </div>
+
+            <p>
+              Beige Barong Tagalog<br>
+              Long sleeves underneath (optional)<br>
+              Brown or beige dress shoes
+            </p>
+
+          </div>
+
+
+          <!-- LADIES -->
+
+          <div class="attire-card">
+
+            <h3>
+              Ladies
+            </h3>
+
+            <div class="color-row">
+
+              <span
+                class="color"
+                style="background:#EADCC6;"
+                title="Champagne"
+              ></span>
+
+              <span
+                class="color"
+                style="background:#D6C3A5;"
+                title="Beige"
+              ></span>
+
+              <span
+                class="color"
+                style="background:#CDBBA7;"
+                title="Taupe"
+              ></span>
+
+            </div>
+
+            <p>
+              Long formal gown<br>
+              Champagne, beige, taupe, or coordinated
+              neutral shades<br>
+              Elegant and modest style
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <p class="attire-note">
+          Kindly keep within the wedding palette and avoid
+          white, ivory, or shades that may closely resemble
+          the bride's attire.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RSVP
+         ===================================================== -->
+
+    <section id="rsvp" class="section rsvp-section">
+
+      <div class="container">
+
+        <div class="rsvp-box">
+
+          <div>
+
+            <p class="section-label">
+              Kindly Reply
+            </p>
+
+            <h2 class="rsvp-title">
+              Will you be joining us?
+            </h2>
+
+            <p class="rsvp-copy">
+              Please let us know if you can celebrate
+              this beautiful day with us.
+            </p>
+
+            <div class="ornament">
+              ❦
+            </div>
+
+          </div>
+
+
+          <div class="rsvp-card">
+
+            <p>
+              We would be delighted to celebrate
+              with you.
+            </p>
+
+            <a
+              href="https://vontinxx.github.io/Rsvp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+            >
+              Open RSVP
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GIFT GUIDE
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="gift-box">
+
+          <p class="section-label">
+            Gift Guide
+          </p>
+
+          <h2 class="gift-title">
+            A Little Note About Gifts
+          </h2>
+
+          <p class="gift-copy">
+
+            Your love, prayers, and presence on our
+            special day are the greatest gifts we could
+            ever ask for.
+
+            <br><br>
+
+            If you would like to bless us with a gift,
+            we would sincerely appreciate a
+            <strong>monetary gift</strong> as we begin
+            this new chapter together.
+
+            <br><br>
+
+            However, if you've chosen something special
+            for us instead, we'd be delighted to receive
+            your thoughtful surprise. Your kindness means
+            the world to us.
+
+          </p>
+
+          <div class="heart">
+            ♥
+          </div>
+
+          <p style="margin-top:8px; font-style:italic;">
+            Thank you for celebrating with us.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQs
+         ===================================================== -->
+
+    <section id="faqs" class="section faq-section">
+
+      <div class="container">
+
+        <div class="center">
+
+          <p class="section-label">
+            Helpful Details
+          </p>
+
+          <h2 class="section-title">
+            Frequently Asked Questions
+          </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+
+          <!-- CHILDREN -->
+
+          <div class="faq-item">
+
+            <button class="faq-question" type="button">
+
+              <span>
+                Can I bring my children?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Absolutely! We love celebrating with
+                families, and your little ones are welcome
+                to join us.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- ADDITIONAL GUESTS -->
+
+          <div class="faq-item">
+
+            <button class="faq-question" type="button">
+
+              <span>
+                Can I bring additional guests?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes! We'd be happy to celebrate with them
+                too. Please let us know in your RSVP how
+                many guests will be coming and include
+                their names so we can prepare enough seats
+                and meals.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- DRESS CODE -->
+
+          <div class="faq-item">
+
+            <button class="faq-question" type="button">
+
+              <span>
+                What should I wear?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Please come dressed in our wedding color
+                palette. We kindly ask guests to avoid
+                wearing white, ivory, or colors that may
+                closely resemble the bride's attire.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- PARKING -->
+
+          <div class="faq-item">
+
+            <button class="faq-question" type="button">
+
+              <span>
+                Where can I park?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Parking is available at the church and at
+                Alberto's Place. Additional directions will
+                be provided closer to the wedding date if
+                needed.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- CONTACT -->
+
+          <div class="faq-item">
+
+            <button class="faq-question" type="button">
+
+              <span>
+                Who can I contact for questions?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                If you have any questions before the
+                wedding, feel free to reach out to our
+                wedding coordinators or send us a message.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <p class="footer-thank">
+      Thank You
+    </p>
+
+    <p class="footer-small">
+      See you on
+    </p>
+
+    <p class="footer-date">
+      November 14, 2026
+    </p>
+
+    <p class="footer-names">
+      Christine & Von
+    </p>
+
+  </footer>
+
+
+  <!-- =======================================================
+       FAQ JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    document.querySelectorAll(".faq-question").forEach(function(button) {
+
+      button.addEventListener("click", function() {
+
+        const item = button.parentElement;
+        const answer = item.querySelector(".faq-answer");
+
+        /* Close other FAQ items */
+        document.querySelectorAll(".faq-item").forEach(function(otherItem) {
+
+          if (otherItem !== item) {
+
+            otherItem.classList.remove("open");
+
+            const otherAnswer =
+              otherItem.querySelector(".faq-answer");
+
+            otherAnswer.style.maxHeight = null;
+
+          }
+
+        });
+
+
+        /* Toggle selected FAQ */
+
+        item.classList.toggle("open");
+
+        if (item.classList.contains("open")) {
+
+          answer.style.maxHeight =
+            answer.scrollHeight + "px";
+
+        } else {
+
+          answer.style.maxHeight = null;
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
