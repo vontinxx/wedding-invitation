@@ -9,27 +9,39 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* =========================================================
+       COLOR PALETTE
+       ========================================================= */
+
     :root {
-      --ink: #4b2d22;
-      --burnt: #a64b28;
-      --clay: #d67b4e;
-      --sage: #7f8d70;
-      --olive: #747d55;
-      --paper: #faf7f2;
-      --cream: #f1e5d4;
-      --soft: #efe3d3;
-      --blush: #d9a7a1;
-      --champagne: #d8c29d;
-      --taupe: #b6a08d;
-      --brown: #795d46;
-      --line: rgba(117, 72, 48, .22);
+      --rust: #B65A3A;
+      --terracotta: #D47A5A;
+      --sage: #9A8F72;
+      --olive: #6F7056;
+      --taupe: #D6C3A5;
+      --beige: #E7D8C5;
+      --blush: #E8C9C5;
+      --champagne: #EADCC6;
+      --ivory: #F7F3EA;
+      --cream: #FBF8F2;
+      --brown: #5A4233;
+      --dark-brown: #493429;
+      --gold: #C49A52;
+      --white: #FFFFFF;
     }
+
+    /* =========================================================
+       BASIC RESET
+       ========================================================= */
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -37,446 +49,373 @@
     }
 
     body {
-      margin: 0;
+      background: var(--ivory);
+      color: var(--brown);
       font-family: "Cormorant Garamond", serif;
-      color: var(--ink);
-      background: var(--paper);
       overflow-x: hidden;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     a {
+      text-decoration: none;
       color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* =========================================================
+       FONTS
+       ========================================================= */
+
+    .script {
+      font-family: "Allura", cursive;
+    }
+
+    .serif {
+      font-family: "Cormorant Garamond", serif;
     }
 
     .sans {
       font-family: "Montserrat", sans-serif;
     }
 
-    .script {
-      font-family: "Allura", cursive;
+    /* =========================================================
+       GENERAL
+       ========================================================= */
+
+    .section {
+      padding: 90px 20px;
+      position: relative;
     }
 
-    .page-shell {
+    .container {
       width: 100%;
-      overflow-x: hidden;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    /* ------------------------------
-       MUSIC BUTTON
-    ------------------------------ */
-
-    .music-button {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 100;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.5);
-      background: var(--burnt);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(75,45,34,.22);
-      transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+    .section-label {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--rust);
+      margin-bottom: 12px;
     }
 
-    .music-button:hover {
-      transform: scale(1.08);
-      background: var(--ink);
-      box-shadow: 0 12px 28px rgba(75,45,34,.28);
+    .section-title {
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 0.95;
+      font-weight: 500;
+      color: var(--brown);
     }
 
-    .music-button.playing {
-      animation: musicPulse 2s ease-in-out infinite;
+    .center {
+      text-align: center;
     }
 
-    @keyframes musicPulse {
-      0%, 100% {
-        box-shadow: 0 8px 24px rgba(75,45,34,.22);
-      }
-      50% {
-        box-shadow: 0 8px 30px rgba(166,75,40,.55);
-      }
+    .ornament {
+      color: var(--rust);
+      font-size: 28px;
+      margin: 18px 0;
     }
 
-    .music-icon {
-      font-size: 21px;
-      line-height: 1;
-    }
-
-    /* ------------------------------
+    /* =========================================================
        NAVIGATION
-    ------------------------------ */
+       ========================================================= */
 
-    header {
+    .navbar {
       position: sticky;
       top: 0;
-      z-index: 30;
-      border-bottom: 1px solid #d7b9a4;
-      background: rgba(250,247,242,.95);
-      backdrop-filter: blur(10px);
+      z-index: 1000;
+      background: rgba(247, 243, 234, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(182, 90, 58, 0.22);
     }
 
-    nav {
-      width: 100%;
-      max-width: 1152px;
+    .nav-inner {
+      max-width: 1100px;
       margin: auto;
-      padding: 16px 20px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .logo {
+    .monogram {
       font-family: "Allura", cursive;
-      font-size: 34px;
-      color: var(--burnt);
-      text-decoration: none;
+      font-size: 38px;
+      color: var(--rust);
+      line-height: 1;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 28px;
     }
 
-    .nav-link {
+    .nav-links a {
       font-family: "Montserrat", sans-serif;
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: #74442e;
+      font-size: 10px;
       font-weight: 600;
-      text-decoration: none;
-      transition: color .25s ease;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown);
     }
 
-    .nav-link:hover {
-      color: var(--burnt);
+    .nav-links a:hover {
+      color: var(--rust);
     }
 
     .nav-rsvp {
-      border: 1px solid var(--burnt);
-      color: var(--burnt);
-      padding: 9px 17px;
-      border-radius: 999px;
-      font-family: "Montserrat", sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all .3s ease;
+      border: 1px solid var(--rust);
+      border-radius: 30px;
+      padding: 10px 17px;
+      color: var(--rust) !important;
     }
 
     .nav-rsvp:hover {
-      background: var(--burnt);
-      color: white;
+      background: var(--rust);
+      color: white !important;
     }
 
-    /* ------------------------------
-       GENERAL
-    ------------------------------ */
-
-    .section {
-      padding: 80px 20px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .section-kicker {
-      font-family: "Montserrat", sans-serif;
-      font-size: 11px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--burnt);
-      font-weight: 700;
-    }
-
-    .section-title {
-      margin: 12px 0 0;
-      color: var(--ink);
-      font-weight: 500;
-      font-size: 42px;
-      line-height: 1;
-    }
-
-    .ornament {
-      color: var(--burnt);
-      font-size: 26px;
-      line-height: 1;
-    }
-
-    .paper-card {
-      border: 1px solid var(--line);
-      box-shadow: 0 16px 36px rgba(95,55,37,.08);
-    }
-
-    /* ------------------------------
-       SCROLL ANIMATIONS
-    ------------------------------ */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-35px);
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(35px);
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
-
-    .reveal.visible,
-    .reveal-left.visible,
-    .reveal-right.visible {
-      opacity: 1;
-      transform: translate(0);
-    }
-
-    /* ------------------------------
+    /* =========================================================
        HERO
-    ------------------------------ */
+       ========================================================= */
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 90px 20px 100px;
-      text-align: center;
-    }
-
-    .botanical-corner {
-      position: absolute;
-      color: var(--sage);
-      opacity: .55;
-      pointer-events: none;
-    }
-
-    .leaf-line {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.4;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .hero-content {
-      position: relative;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .hero-lines {
-      margin: 24px auto 0;
+      min-height: 92vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 15px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(154,143,114,.13), transparent 25%),
+        radial-gradient(circle at 90% 85%, rgba(232,201,197,.18), transparent 25%),
+        var(--ivory);
+      padding: 80px 20px;
     }
 
-    .hero-lines span {
-      height: 1px;
-      width: 50px;
-      background: var(--burnt);
+    .hero-content {
+      text-align: center;
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
     }
 
-    .hero-names {
-      margin: 18px 0 0;
-      font-size: clamp(64px, 10vw, 105px);
-      line-height: .78;
-      font-weight: 500;
-      color: var(--ink);
-    }
-
-    .hero-married {
-      margin-top: 32px;
+    .hero-label {
       font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--rust);
+    }
+
+    .hero-ornament {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin: 25px 0 15px;
+    }
+
+    .hero-ornament span.line {
+      width: 55px;
+      height: 1px;
+      background: var(--rust);
+    }
+
+    .hero-ornament span.star {
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+    .names {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(72px, 14vw, 145px);
+      line-height: 0.75;
+      font-weight: 500;
+      color: var(--brown);
+    }
+
+    .names .amp {
+      font-family: "Allura", cursive;
+      font-size: 0.55em;
+      color: var(--rust);
+      display: block;
+      line-height: 0.9;
+      margin: 8px 0;
+    }
+
+    .getting-married {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
       font-size: 12px;
       font-weight: 600;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--burnt);
+      color: var(--rust);
+      margin-top: 30px;
     }
 
-    .hero-date-box {
-      max-width: 520px;
-      margin: 32px auto 0;
+    .hero-details {
+      border-top: 1px solid rgba(196,154,82,.55);
+      border-bottom: 1px solid rgba(196,154,82,.55);
+      max-width: 500px;
+      margin: 30px auto 0;
       padding: 20px 15px;
-      border-top: 1px solid #cfa98e;
-      border-bottom: 1px solid #cfa98e;
     }
 
     .hero-date {
-      font-size: 28px;
+      font-size: 29px;
       font-weight: 600;
+      color: var(--brown);
     }
 
-    .hero-venue {
-      margin-top: 10px;
-      font-size: 22px;
-      line-height: 1.15;
-      color: #70432f;
+    .hero-place {
+      margin-top: 7px;
+      font-size: 21px;
+      color: var(--brown);
     }
 
     .hero-time {
-      margin-top: 10px;
+      margin-top: 8px;
       font-family: "Montserrat", sans-serif;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: #8b593d;
+      letter-spacing: 0.18em;
+      color: var(--rust);
     }
 
-    .primary-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 35px;
-      padding: 13px 28px;
-      border-radius: 999px;
-      background: var(--burnt);
+    .button {
+      display: inline-block;
+      border: none;
+      background: var(--rust);
       color: white;
+      padding: 15px 28px;
+      border-radius: 30px;
       font-family: "Montserrat", sans-serif;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .18em;
       text-transform: uppercase;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(166,75,40,.18);
-      transition: transform .3s ease, box-shadow .3s ease;
+      letter-spacing: 0.16em;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: .25s ease;
     }
 
-    .primary-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(166,75,40,.25);
+    .button:hover {
+      background: var(--dark-brown);
+      transform: translateY(-2px);
     }
 
-    /* ------------------------------
-       WELCOME / COUPLE
-    ------------------------------ */
+    /* =========================================================
+       BOTANICAL DECOR
+       ========================================================= */
+
+    .leaf-decoration {
+      position: absolute;
+      color: var(--sage);
+      opacity: .45;
+      pointer-events: none;
+      font-size: 100px;
+      line-height: 1;
+    }
+
+    .leaf-left {
+      left: -15px;
+      top: 50px;
+      transform: rotate(-20deg);
+    }
+
+    .leaf-right {
+      right: -15px;
+      bottom: 50px;
+      transform: rotate(160deg);
+    }
+
+    /* =========================================================
+       WELCOME
+       ========================================================= */
 
     .welcome {
-      background: var(--soft);
+      background: var(--beige);
     }
 
     .welcome-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 70px;
       align-items: center;
     }
 
     .photo-frame {
       position: relative;
-      width: 100%;
-      max-width: 500px;
-      margin: auto;
+      padding: 12px;
     }
 
     .photo-frame::before {
       content: "";
       position: absolute;
-      left: -12px;
-      top: -12px;
-      width: 100%;
-      height: 100%;
-      border: 1px solid var(--burnt);
+      inset: 0;
+      border: 1px solid var(--rust);
+      transform: translate(-10px, -10px);
       pointer-events: none;
     }
 
     .couple-photo {
-      position: relative;
-      display: block;
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: center center;
-      box-shadow: 0 20px 40px rgba(75,45,34,.18);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 15px 35px rgba(73,52,41,.14);
     }
 
-    .welcome-text {
-      text-align: left;
-    }
-
-    .welcome-title {
-      margin-top: 16px;
-      font-size: 42px;
+    .welcome-text h2 {
+      font-size: clamp(42px, 6vw, 62px);
       line-height: .95;
       font-weight: 500;
+      margin-bottom: 22px;
     }
 
-    .welcome-copy {
-      margin-top: 25px;
+    .welcome-text p {
       font-size: 21px;
       line-height: 1.55;
-      color: #70432f;
+      color: var(--brown);
     }
 
-    .welcome-ornament {
-      margin-top: 25px;
-      font-size: 35px;
-      color: var(--burnt);
-    }
-
-    /* ------------------------------
+    /* =========================================================
        DETAILS
-    ------------------------------ */
-
-    .center-heading {
-      text-align: center;
-    }
+       ========================================================= */
 
     .details-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      margin-top: 45px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 50px;
     }
 
     .detail-card {
+      background: var(--cream);
+      border: 1px solid rgba(182,90,58,.25);
+      box-shadow: 0 15px 35px rgba(90,66,51,.08);
       overflow: hidden;
-      background: #fffaf4;
-      transition: transform .35s ease, box-shadow .35s ease;
     }
 
-    .detail-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 22px 42px rgba(95,55,37,.13);
-    }
-
-    .detail-image {
-      display: block;
+    .detail-card img {
       width: 100%;
-      height: 270px;
+      height: 300px;
       object-fit: cover;
-      object-position: center;
-      transition: transform .7s ease;
-    }
-
-    .detail-card:hover .detail-image {
-      transform: scale(1.03);
     }
 
     .detail-content {
@@ -485,171 +424,190 @@
     }
 
     .detail-icon {
-      font-size: 22px;
-      color: var(--burnt);
+      font-size: 24px;
+      color: var(--rust);
     }
 
-    .detail-title {
-      margin-top: 13px;
-      font-size: 26px;
+    .detail-content h3 {
+      font-size: 31px;
       font-weight: 600;
+      margin-top: 10px;
     }
 
     .detail-place {
-      margin-top: 10px;
-      font-size: 20px;
-      line-height: 1.25;
-      color: #70432f;
+      font-size: 22px;
+      margin-top: 8px;
     }
 
     .detail-time {
       margin-top: 12px;
       font-family: "Montserrat", sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .16em;
       text-transform: uppercase;
-      color: var(--burnt);
-    }
-
-    .detail-location {
-      margin-top: 8px;
-      font-family: "Montserrat", sans-serif;
-      font-size: 11px;
-      color: #70432f;
+      letter-spacing: .14em;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--rust);
     }
 
     .map-link {
       display: inline-block;
-      margin-top: 17px;
-      color: var(--burnt);
+      margin-top: 18px;
       font-family: "Montserrat", sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: .13em;
       text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--rust);
       text-decoration: underline;
-      text-underline-offset: 4px;
-      transition: color .25s ease;
     }
 
-    .map-link:hover {
-      color: var(--ink);
+    /* =========================================================
+       TIMELINE
+       ========================================================= */
+
+    .timeline-section {
+      background: var(--rust);
+      color: white;
     }
 
-    /* ------------------------------
-       DRESS CODE
-    ------------------------------ */
-
-    .dress-section {
-      background: #f4eadf;
+    .timeline-section .section-label {
+      color: var(--champagne);
     }
 
-    .dress-intro {
-      max-width: 650px;
-      margin: 18px auto 0;
+    .timeline-section .section-title {
+      color: white;
+    }
+
+    .timeline {
+      max-width: 620px;
+      margin: 55px auto 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 55px;
+      padding-bottom: 35px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 34px;
+      bottom: 0;
+      width: 1px;
+      background: rgba(234,220,198,.65);
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+
+    .timeline-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--champagne);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+    }
+
+    .timeline-time {
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      letter-spacing: .15em;
+      font-weight: 700;
+      color: var(--champagne);
+    }
+
+    .timeline-event {
+      font-size: 29px;
+      margin-top: 4px;
+    }
+
+    /* =========================================================
+       PRINCIPAL SPONSORS ATTIRE
+       ========================================================= */
+
+    .attire-section {
+      background: var(--ivory);
+    }
+
+    .attire-intro {
+      max-width: 700px;
+      margin: 15px auto 0;
       text-align: center;
       font-size: 20px;
       line-height: 1.5;
-      color: #70432f;
     }
 
-    .dress-grid {
+    .attire-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 45px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 50px;
     }
 
-    .dress-card {
-      background: #fffaf4;
-      border: 1px solid #ddc3ae;
-      padding: 30px 20px;
+    .attire-card {
+      background: #F6EEE4;
+      border: 1px solid rgba(182,90,58,.25);
+      padding: 35px 30px;
       text-align: center;
-      transition: transform .35s ease, box-shadow .35s ease;
     }
 
-    .dress-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 35px rgba(95,55,37,.1);
-    }
-
-    .dress-card h3 {
-      margin: 0;
-      font-size: 24px;
+    .attire-card h3 {
+      font-size: 32px;
       font-weight: 600;
-      color: var(--ink);
     }
 
-    .dress-card p {
-      margin: 12px 0 0;
-      font-family: "Montserrat", sans-serif;
-      font-size: 11px;
+    .attire-card p {
+      font-size: 19px;
       line-height: 1.7;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: #70432f;
+      margin-top: 20px;
     }
 
-    .color-swatches {
+    .color-row {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 22px auto 4px;
-      max-width: 220px;
+      gap: 10px;
+      margin-top: 22px;
     }
 
-    .swatch {
-      width: 30px;
-      height: 30px;
+    .color {
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      border: 1px solid rgba(75,45,34,.14);
+      border: 1px solid rgba(90,66,51,.15);
     }
 
-    .rust {
-      background: #a64b28;
-    }
-
-    .beige {
-      background: #d9c5ad;
-    }
-
-    .sage {
-      background: #87947a;
-    }
-
-    .champagne {
-      background: #e1cfac;
-    }
-
-    .blush {
-      background: #d9aaa4;
-    }
-
-    .brown {
-      background: #795d46;
-    }
-
-    .dress-note {
+    .attire-note {
       margin-top: 30px;
       text-align: center;
       font-family: "Montserrat", sans-serif;
       font-size: 11px;
       font-style: italic;
-      color: #8b593d;
+      color: var(--brown);
     }
 
-    /* ------------------------------
+    /* =========================================================
        RSVP
-    ------------------------------ */
+       ========================================================= */
 
     .rsvp-section {
-      background: var(--soft);
+      background: var(--beige);
     }
 
-    .rsvp-grid {
+    .rsvp-box {
       display: grid;
       grid-template-columns: .8fr 1.2fr;
       gap: 60px;
@@ -657,85 +615,79 @@
     }
 
     .rsvp-title {
-      margin-top: 12px;
-      font-size: 44px;
-      line-height: .95;
+      font-size: clamp(48px, 7vw, 70px);
+      line-height: .9;
       font-weight: 500;
     }
 
     .rsvp-copy {
+      font-size: 21px;
+      line-height: 1.5;
       margin-top: 20px;
-      font-size: 20px;
-      line-height: 1.55;
-      color: #70432f;
     }
 
-    .rsvp-symbol {
-      margin-top: 25px;
-      color: var(--burnt);
-      font-size: 38px;
-    }
-
-    .rsvp-box {
-      min-height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 35px;
-      background: #fffaf4;
+    .rsvp-card {
+      background: var(--cream);
+      border: 1px solid rgba(182,90,58,.2);
+      padding: 50px 35px;
       text-align: center;
+      box-shadow: 0 15px 35px rgba(90,66,51,.07);
     }
 
-    /* ------------------------------
-       GIFT
-    ------------------------------ */
+    .rsvp-card p {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
 
-    .gift-panel {
+    /* =========================================================
+       GIFT GUIDE
+       ========================================================= */
+
+    .gift-box {
       max-width: 850px;
       margin: auto;
-      padding: 55px 25px;
+      padding: 60px 30px;
       text-align: center;
-      border-top: 1px solid #c89b7b;
-      border-bottom: 1px solid #c89b7b;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
     }
 
     .gift-title {
-      margin-top: 12px;
-      font-size: 40px;
-      line-height: 1;
+      font-size: clamp(40px, 6vw, 58px);
+      line-height: .95;
       font-weight: 500;
     }
 
     .gift-copy {
-      max-width: 680px;
-      margin: 22px auto 0;
+      max-width: 700px;
+      margin: 25px auto 0;
       font-size: 20px;
       line-height: 1.6;
-      color: #70432f;
     }
 
     .heart {
-      margin-top: 20px;
-      color: var(--burnt);
-      font-size: 22px;
+      color: var(--rust);
+      font-size: 25px;
+      margin-top: 25px;
     }
 
-    /* ------------------------------
+    /* =========================================================
        FAQ
-    ------------------------------ */
+       ========================================================= */
 
     .faq-section {
-      background: #f4eadf;
+      background: #F1E7DA;
     }
 
     .faq-list {
-      margin-top: 45px;
-      border-top: 1px solid #d7b9a4;
-      border-bottom: 1px solid #d7b9a4;
+      max-width: 850px;
+      margin: 45px auto 0;
+      border-top: 1px solid rgba(182,90,58,.35);
+      border-bottom: 1px solid rgba(182,90,58,.35);
     }
 
     .faq-item {
-      border-bottom: 1px solid #d7b9a4;
+      border-bottom: 1px solid rgba(182,90,58,.25);
     }
 
     .faq-item:last-child {
@@ -744,258 +696,204 @@
 
     .faq-question {
       width: 100%;
-      padding: 20px 0;
-      border: 0;
-      background: transparent;
+      background: none;
+      border: none;
+      padding: 22px 5px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
       text-align: left;
       cursor: pointer;
-      color: var(--ink);
+      color: var(--brown);
     }
 
     .faq-question span {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 600;
     }
 
     .faq-icon {
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      position: relative;
-    }
-
-    .faq-icon::before,
-    .faq-icon::after {
-      content: "";
-      position: absolute;
-      background: var(--burnt);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: transform .3s ease;
-    }
-
-    .faq-icon::before {
-      width: 16px;
-      height: 1px;
-    }
-
-    .faq-icon::after {
-      width: 1px;
-      height: 16px;
-    }
-
-    .faq-item.open .faq-icon::after {
-      transform: translate(-50%, -50%) rotate(90deg);
-      opacity: 0;
+      font-family: "Montserrat", sans-serif;
+      font-size: 22px;
+      color: var(--rust);
+      transition: transform .25s ease;
     }
 
     .faq-answer {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows .35s ease;
-    }
-
-    .faq-item.open .faq-answer {
-      grid-template-rows: 1fr;
-    }
-
-    .faq-answer-inner {
+      max-height: 0;
       overflow: hidden;
+      transition: max-height .35s ease;
     }
 
     .faq-answer p {
-      padding: 0 40px 20px 0;
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #70432f;
+      padding: 0 40px 22px 5px;
+      font-size: 19px;
+      line-height: 1.55;
     }
 
-    /* ------------------------------
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* =========================================================
        FOOTER
-    ------------------------------ */
+       ========================================================= */
 
     footer {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
       position: relative;
       overflow: hidden;
-      background: var(--ink);
-      padding: 75px 20px;
-      color: #fff9f1;
-      text-align: center;
     }
 
-    .footer-script {
+    .footer-thank {
       font-family: "Allura", cursive;
-      font-size: 55px;
-      color: #f4d7ba;
+      color: var(--champagne);
+      font-size: 62px;
     }
 
     .footer-small {
-      margin-top: 18px;
       font-family: "Montserrat", sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .22em;
       text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 10px;
+      font-weight: 700;
+      margin-top: 18px;
     }
 
     .footer-date {
-      margin-top: 10px;
-      font-size: 27px;
+      font-size: 30px;
+      margin-top: 8px;
     }
 
     .footer-names {
-      margin-top: 25px;
       font-family: "Allura", cursive;
-      font-size: 55px;
-      color: #f4d7ba;
+      color: var(--champagne);
+      font-size: 58px;
+      margin-top: 20px;
     }
 
-    /* ------------------------------
-       MOBILE
-    ------------------------------ */
 
-    @media (max-width: 800px) {
+    /* =========================================================
+       FINAL STORY / DRESS CODE / MUSIC / TRANSITIONS
+       ========================================================= */
+    .story-layout {
+      grid-template-columns: 1.25fr .75fr;
+      gap: 65px;
+    }
+    .story-layout .welcome-text { text-align: left; }
+    .story-layout .photo-frame { max-width: 430px; width: 100%; justify-self: end; }
+    .story-copy p { font-size: 20px; line-height: 1.65; margin-top: 18px; }
+    .story-copy .story-closing { font-size: 24px; font-weight: 600; color: var(--rust); margin-top: 28px; }
+    .story-copy .story-signature { font-family: "Allura", cursive; font-size: 42px; color: var(--rust); margin-top: 10px; }
+    .attire-group-title { text-align:center; font-family:"Cormorant Garamond",serif; font-size:32px; font-weight:600; margin:55px 0 25px; color:var(--brown); }
+    .guest-attire-card { max-width:1000px; margin:0 auto; }
+    .guest-color-row { display:flex; justify-content:center; align-items:flex-start; gap:22px; flex-wrap:wrap; margin-top:28px; }
+    .guest-color-row > div { display:flex; flex-direction:column; align-items:center; gap:8px; min-width:70px; }
+    .guest-color-row small { font-family:"Montserrat",sans-serif; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
+    .guest-color { width:44px; height:44px; display:inline-block; }
+    .guest-color.champagne { background:#EADCC6; }
+    .guest-color.beige { background:#E7D8C5; }
+    .guest-color.brown { background:#8B6F56; }
+    .guest-color.rust { background:#B65A3A; }
+    .guest-color.blush { background:#E8C9C5; }
+    .guest-color.sage { background:#9A8F72; }
+    .music-button { position:fixed; right:18px; bottom:18px; z-index:1200; border:1px solid var(--rust); background:rgba(247,243,234,.95); color:var(--brown); border-radius:30px; padding:12px 17px; font-family:"Montserrat",sans-serif; font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; box-shadow:0 8px 20px rgba(90,66,51,.12); transition:background 1s ease,color 1s ease,transform 1s ease; }
+    .music-button:hover { background:var(--rust); color:white; transform:translateY(-2px); }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity 2.4s ease, transform 2.4s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 768px) {
+
+      .section {
+        padding: 70px 18px;
+      }
 
       .nav-links {
         display: none;
       }
 
-      .section {
-        padding: 65px 20px;
+      .nav-inner {
+        padding: 13px 16px;
+      }
+
+      .monogram {
+        font-size: 34px;
       }
 
       .hero {
-        padding: 70px 20px 80px;
+        min-height: 88vh;
+        padding: 65px 18px;
       }
 
-      .hero-names {
-        font-size: 70px;
+      .hero-place {
+        font-size: 18px;
       }
 
-      .hero-venue {
-        font-size: 19px;
+      .hero-date {
+        font-size: 25px;
       }
 
       .welcome-grid,
       .details-grid,
-      .dress-grid,
-      .rsvp-grid {
+      .attire-grid,
+      .rsvp-box {
         grid-template-columns: 1fr;
       }
 
       .welcome-grid {
-        gap: 45px;
+        gap: 50px;
       }
 
       .welcome-text {
         text-align: center;
       }
 
-      .welcome-title {
-        font-size: 37px;
-      }
-
-      .photo-frame {
-        max-width: 430px;
-      }
-
-      .details-grid {
-        gap: 25px;
-      }
-
-      .dress-grid {
-        gap: 15px;
-      }
-
-      .rsvp-grid {
-        gap: 35px;
-      }
-
-      .rsvp-title {
-        font-size: 40px;
+      .detail-card img {
+        height: 250px;
       }
 
       .rsvp-box {
-        min-height: 150px;
+        gap: 40px;
       }
 
-      .section-title {
-        font-size: 37px;
+      .rsvp-card {
+        padding: 40px 22px;
       }
 
-      .gift-title {
-        font-size: 36px;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      nav {
-        padding: 13px 16px;
+      .timeline {
+        margin-top: 40px;
       }
 
-      .logo {
-        font-size: 31px;
-      }
-
-      .nav-rsvp {
-        padding: 8px 13px;
-        font-size: 10px;
-      }
-
-      .hero-names {
-        font-size: 61px;
-      }
-
-      .hero-date {
-        font-size: 24px;
-      }
-
-      .hero-venue {
-        font-size: 18px;
-      }
-
-      .section {
-        padding: 60px 18px;
-      }
-
-      .couple-photo {
-        aspect-ratio: 4 / 5;
+      .attire-card {
+        padding: 30px 22px;
       }
 
       .faq-question span {
-        font-size: 18px;
+        font-size: 19px;
+        padding-right: 15px;
       }
 
       .faq-answer p {
-        font-size: 17px;
+        font-size: 18px;
       }
 
-      .music-button {
-        right: 15px;
-        bottom: 15px;
-        width: 48px;
-        height: 48px;
-      }
-    }
+      .story-layout { grid-template-columns:1fr; gap:45px; }
+      .story-layout .welcome-text { text-align:center; }
+      .story-layout .photo-frame { justify-self:center; max-width:360px; }
+      .story-copy p { font-size:19px; }
+      .guest-color-row { gap:14px; }
+      .music-button { right:12px; bottom:12px; }
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+      .footer-names {
+        font-size: 48px;
       }
     }
   </style>
@@ -1003,201 +901,176 @@
 
 <body>
 
-<div class="page-shell">
+  <!-- =======================================================
+       NAVIGATION
+       ======================================================= -->
 
-  <!-- MUSIC -->
-  <audio id="backgroundMusic" loop preload="auto">
-    <source src="nahanap-kita.mp3" type="audio/mpeg">
-  </audio>
+  <header class="navbar">
+    <nav class="nav-inner">
 
-  <button
-    id="musicButton"
-    class="music-button"
-    aria-label="Play wedding music"
-    title="Play music"
-  >
-    <span id="musicIcon" class="music-icon">♪</span>
-  </button>
-
-
-  <!-- NAVIGATION -->
-  <header>
-    <nav>
-      <a href="#home" class="logo">C & V</a>
+      <a href="#home" class="monogram">
+        C & V
+      </a>
 
       <div class="nav-links">
-        <a href="#details" class="nav-link">Details</a>
-        <a href="#dress-code" class="nav-link">Dress Code</a>
-        <a href="#rsvp" class="nav-link">RSVP</a>
-        <a href="#faqs" class="nav-link">FAQs</a>
+        <a href="#details">Details</a>
+        <a href="#attire">Attire</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#faqs">FAQs</a>
       </div>
 
-      <a
-        href="https://vontinxx.github.io/Rsvp/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="nav-rsvp"
-      >
+      <a href="#rsvp" class="nav-rsvp sans">
         RSVP
       </a>
+
     </nav>
   </header>
 
 
   <main>
 
-    <!-- HERO -->
+    <!-- =====================================================
+         HERO / COVER
+         ===================================================== -->
+
     <section id="home" class="hero">
 
-      <svg
-        class="botanical-corner"
-        style="left:-35px; top:30px; width:320px; height:320px;"
-        viewBox="0 0 200 200"
-        aria-hidden="true"
-      >
-        <path
-          class="leaf-line"
-          d="M9 189C53 139 85 101 180 13
-          M57 141c-30-4-34-27-27-40
-          28 1 39 18 27 40Zm27-27c-3-28 18-38 34-32
-          3 25-9 39-34 32Zm28-34c6-25 28-29 41-19
-          -5 23-22 31-41 19Zm26-28c8-22 28-22 38-11
-          -8 20-23 25-38 11Z"
-        />
-      </svg>
+      <div class="leaf-decoration leaf-left">❧</div>
+      <div class="leaf-decoration leaf-right">❧</div>
 
-      <svg
-        class="botanical-corner"
-        style="right:-35px; bottom:0; width:320px; height:320px; transform:rotate(180deg);"
-        viewBox="0 0 200 200"
-        aria-hidden="true"
-      >
-        <path
-          class="leaf-line"
-          d="M9 189C53 139 85 101 180 13
-          M57 141c-30-4-34-27-27-40
-          28 1 39 18 27 40Zm27-27c-3-28 18-38 34-32
-          3 25-9 39-34 32Zm28-34c6-25 28-29 41-19
-          -5 23-22 31-41 19Zm26-28c8-22 28-22 38-11
-          -8 20-23 25-38 11Z"
-        />
-      </svg>
+      <div class="hero-content reveal">
 
-      <div class="hero-content">
-
-        <p class="section-kicker reveal">
+        <p class="hero-label">
           Together with their families
         </p>
 
-        <div class="hero-lines reveal">
-          <span></span>
-          <span class="ornament">✦</span>
-          <span></span>
+        <div class="hero-ornament">
+          <span class="line"></span>
+          <span class="star">✦</span>
+          <span class="line"></span>
         </div>
 
-        <h1 class="hero-names reveal">
-          Christine<br>&<br>Von
+        <h1 class="names">
+          Christine
+          <span class="amp">&</span>
+          Von
         </h1>
 
-        <p class="hero-married reveal">
+        <p class="getting-married">
           We're Getting Married
         </p>
 
-        <div class="hero-date-box reveal">
+        <div class="hero-details">
 
-          <div class="hero-date">
+          <p class="hero-date">
             November 14, 2026
-          </div>
+          </p>
 
-          <div class="hero-venue">
+          <p class="hero-place">
             National Shrine and Parish of Our Lady of Aranzazu
-          </div>
+          </p>
 
-          <div class="hero-time">
+          <p class="hero-time">
             12:30 PM
-          </div>
+          </p>
 
         </div>
 
-        <a href="#welcome" class="primary-button reveal">
+        <a href="#welcome" class="button">
           Open Invitation
         </a>
 
       </div>
+
     </section>
 
 
-    <!-- WELCOME / COUPLE -->
+    <!-- =====================================================
+         OUR STORY / COUPLE PHOTO
+         ===================================================== -->
+
     <section id="welcome" class="section welcome">
 
-      <div class="container welcome-grid">
+      <div class="container">
 
-        <div class="photo-frame reveal-left">
-          <img
-            src="IMG_20251116_130030749_HDR.jpg"
-            alt="Christine and Von"
-            class="couple-photo"
-          >
-        </div>
+        <div class="welcome-grid story-layout reveal">
 
-        <div class="welcome-text reveal-right">
+          <div class="welcome-text">
+            <p class="section-label">
+              Our Story
+            </p>
 
-          <p class="section-kicker">
-            A Note From The Couple
-          </p>
+            <h2>
+              It wasn't always easy, but it was always worth it.
+            </h2>
 
-          <h2 class="welcome-title">
-            Every love story is beautiful,
-            but ours is our favorite.
-          </h2>
+            <div class="story-copy">
+              <p>If there's one thing our journey has taught us, it's that love isn't always about having a perfect story.</p>
+              <p>There were moments that challenged us, seasons that tested us, and times when we had to learn how to grow together instead of apart.</p>
+              <p>But along the way, we built something real.</p>
+              <p>A life filled with memories, laughter, lessons, and love. We've watched each other grow, faced life's challenges side by side, and continued choosing one another through it all.</p>
+              <p>And today, we look back at everything that brought us here with grateful hearts.</p>
+              <p>Because every chapter—the easy ones and the difficult ones—led us to this moment.</p>
+              <p class="story-closing">And we wouldn't change a thing.</p>
+              <p class="story-signature">Christine &amp; Von</p>
+            </div>
 
-          <p class="welcome-copy">
-            Thank you for being part of the beginning of our forever.
-            We can't wait to celebrate this beautiful day with you.
-          </p>
+          </div>
 
-          <div class="welcome-ornament">
-            ❦
+          <div class="photo-frame">
+            <img
+              src="IMG_20251116_130030749_HDR.jpg"
+              alt="Christine and Von"
+              class="couple-photo"
+            >
           </div>
 
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- DETAILS -->
+    <!-- =====================================================
+         WEDDING DETAILS
+         ===================================================== -->
+
     <section id="details" class="section">
 
       <div class="container">
 
-        <div class="center-heading reveal">
-          <p class="section-kicker">
+        <div class="center">
+
+          <p class="section-label">
             The Celebration
           </p>
 
           <h2 class="section-title">
             Wedding Details
           </h2>
+
         </div>
 
 
-        <div class="details-grid">
+        <div class="details-grid reveal">
 
           <!-- CHURCH -->
-          <article class="detail-card paper-card reveal-left">
+
+          <article class="detail-card">
 
             <img
               src="nuestra.jpg"
               alt="National Shrine and Parish of Our Lady of Aranzazu"
-              class="detail-image"
             >
 
             <div class="detail-content">
 
-              <div class="detail-icon">✦</div>
+              <div class="detail-icon">
+                ♡
+              </div>
 
-              <h3 class="detail-title">
+              <h3>
                 Ceremony
               </h3>
 
@@ -1209,12 +1082,12 @@
                 12:30 PM
               </p>
 
-              <p class="detail-location">
+              <p style="margin-top:8px;">
                 San Mateo, Rizal
               </p>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=National+Shrine+and+Parish+of+Our+Lady+of+Aranzazu,+1850+Gen.+Luna+Ave,+San+Mateo,+Rizal"
+                href="https://www.google.com/maps/search/?api=1&query=National+Shrine+and+Parish+of+Our+Lady+of+Aranzazu+1850+Gen.+Luna+Ave+San+Mateo+Rizal"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="map-link"
@@ -1223,23 +1096,26 @@
               </a>
 
             </div>
+
           </article>
 
 
           <!-- RECEPTION -->
-          <article class="detail-card paper-card reveal-right">
+
+          <article class="detail-card">
 
             <img
               src="alfredo.jpg"
               alt="Alfredo's Place"
-              class="detail-image"
             >
 
             <div class="detail-content">
 
-              <div class="detail-icon">✦</div>
+              <div class="detail-icon">
+                ❦
+              </div>
 
-              <h3 class="detail-title">
+              <h3>
                 Reception
               </h3>
 
@@ -1252,7 +1128,7 @@
               </p>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=P45P%2BXHJ+Alfredo%27s+Place,+Maly-Maarang+Rd,+Rodriguez,+Rizal"
+                href="https://www.google.com/maps/search/?api=1&query=P45P%2BXHJ+Alfredo%27s+Place+Maly-Maarang+Rd+Rodriguez+Rizal"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="map-link"
@@ -1261,210 +1137,200 @@
               </a>
 
             </div>
+
           </article>
 
         </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DRESS CODE
+         ===================================================== -->
+
+    <section id="attire" class="section attire-section">
+      <div class="container">
+
+        <div class="center">
+          <p class="section-label">Dress Code</p>
+          <h2 class="section-title">For the Celebration</h2>
+          <p class="attire-intro">We would love for everyone to complement our warm, elegant wedding palette.</p>
+        </div>
+
+        <div class="attire-group-title">Principal Sponsors</div>
+        <div class="attire-grid">
+          <div class="attire-card">
+            <h3>Ninongs</h3>
+            <div class="color-row"><span class="color" style="background:#E7D8C5;" title="Beige"></span></div>
+            <p>Beige Barong Tagalog</p>
+          </div>
+          <div class="attire-card">
+            <h3>Ninangs</h3>
+            <div class="color-row">
+              <span class="color" style="background:#EADCC6;" title="Champagne"></span>
+              <span class="color" style="background:#E7D8C5;" title="Beige"></span>
+            </div>
+            <p>Long formal gown or dress</p>
+          </div>
+        </div>
+
+        <div class="attire-group-title">Entourage</div>
+        <div class="attire-grid">
+          <div class="attire-card">
+            <h3>Bridesmaids</h3>
+            <div class="color-row"><span class="color" style="background:#B65A3A;" title="Rust / Burnt Orange"></span></div>
+            <p>Rust / Burnt Orange</p>
+          </div>
+          <div class="attire-card">
+            <h3>Groomsmen</h3>
+            <div class="color-row"><span class="color" style="background:#E7D8C5;" title="Beige"></span></div>
+            <p>Beige Tux</p>
+          </div>
+        </div>
+
+        <div class="attire-group-title">Guests</div>
+        <div class="guest-attire-card attire-card">
+          <p>We invite our guests to come in formal attire inspired by our warm and earthy wedding palette.</p>
+          <div class="guest-color-row">
+            <div><span class="color guest-color champagne"></span><small>Champagne</small></div>
+            <div><span class="color guest-color beige"></span><small>Beige</small></div>
+            <div><span class="color guest-color brown"></span><small>Brown</small></div>
+            <div><span class="color guest-color rust"></span><small>Rust</small></div>
+            <div><span class="color guest-color blush"></span><small>Blush Pink</small></div>
+            <div><span class="color guest-color sage"></span><small>Sage</small></div>
+          </div>
+          <p class="attire-note">Kindly avoid white, ivory, or colors that may closely resemble the bride's attire.</p>
+        </div>
+
       </div>
     </section>
 
 
-    <!-- DRESS CODE -->
-    <section id="dress-code" class="section dress-section">
+    <!-- =====================================================
+         RSVP
+         ===================================================== -->
+
+    <section id="rsvp" class="section rsvp-section">
 
       <div class="container">
 
-        <div class="center-heading reveal">
+        <div class="rsvp-box reveal">
 
-          <p class="section-kicker">
-            Attire
-          </p>
+          <div>
 
-          <h2 class="section-title">
-            Dress Code
-          </h2>
-
-          <p class="dress-intro">
-            We invite you to dress in warm, elegant, and earthy tones
-            that complement our celebration.
-          </p>
-
-        </div>
-
-
-        <div class="dress-grid">
-
-          <!-- BRIDESMAIDS -->
-          <div class="dress-card reveal">
-
-            <h3>
-              Bridesmaids
-            </h3>
-
-            <div class="color-swatches">
-              <span class="swatch rust"></span>
-              <span class="swatch" style="background:#b75c35;"></span>
-              <span class="swatch" style="background:#963f23;"></span>
-            </div>
-
-            <p>
-              Rust / Burnt Orange
+            <p class="section-label">
+              Kindly Reply
             </p>
 
-          </div>
+            <h2 class="rsvp-title">
+              Will you be joining us?
+            </h2>
 
-
-          <!-- GROOMSMEN -->
-          <div class="dress-card reveal">
-
-            <h3>
-              Groomsmen
-            </h3>
-
-            <div class="color-swatches">
-              <span class="swatch beige"></span>
-              <span class="swatch" style="background:#cdb395;"></span>
-              <span class="swatch" style="background:#e1d0b9;"></span>
-            </div>
-
-            <p>
-              Beige Tux
+            <p class="rsvp-copy">
+              Please let us know if you can celebrate this beautiful day with us on or before October 14, 2026.
             </p>
 
-          </div>
-
-
-          <!-- GUESTS -->
-          <div class="dress-card reveal">
-
-            <h3>
-              Guests
-            </h3>
-
-            <div class="color-swatches">
-
-              <span class="swatch rust"></span>
-              <span class="swatch sage"></span>
-              <span class="swatch beige"></span>
-              <span class="swatch champagne"></span>
-              <span class="swatch blush"></span>
-              <span class="swatch brown"></span>
-
+            <div class="ornament">
+              ❦
             </div>
 
+          </div>
+
+
+          <div class="rsvp-card">
+
             <p>
-              Rust • Sage Green • Beige • Champagne • Blush Pink • Brown
+              We would be delighted to celebrate
+              with you.
             </p>
 
+            <a
+              href="https://vontinxx.github.io/Rsvp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+            >
+              Submit RSVP
+            </a>
+
           </div>
-
-        </div>
-
-
-        <p class="dress-note reveal">
-          Any shade within these colors is welcome.
-          Kindly avoid wearing white, ivory, or colors that may closely
-          resemble the bride's attire.
-        </p>
-
-      </div>
-    </section>
-
-
-    <!-- RSVP -->
-    <section id="rsvp" class="section rsvp-section">
-
-      <div class="container rsvp-grid">
-
-        <div class="reveal-left">
-
-          <p class="section-kicker">
-            Kindly Reply
-          </p>
-
-          <h2 class="rsvp-title">
-            Will you be joining us?
-          </h2>
-
-          <p class="rsvp-copy">
-            Please let us know if you can celebrate this beautiful day
-            with us.
-          </p>
-
-          <div class="rsvp-symbol">
-            ❦
-          </div>
-
-        </div>
-
-
-        <div class="rsvp-box paper-card reveal-right">
-
-          <a
-            href="https://vontinxx.github.io/Rsvp/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="primary-button"
-            style="margin-top:0;"
-          >
-            Open RSVP
-          </a>
 
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- GIFT GUIDE -->
+    <!-- =====================================================
+         GIFT GUIDE
+         ===================================================== -->
+
     <section class="section">
 
-      <div class="gift-panel reveal">
+      <div class="container">
 
-        <p class="section-kicker">
-          Gift Guide
-        </p>
+        <div class="gift-box reveal">
 
-        <h2 class="gift-title">
-          A Little Note About Gifts
-        </h2>
+          <p class="section-label">
+            Gift Guide
+          </p>
 
-        <p class="gift-copy">
-          Your love, prayers, and presence on our special day are the
-          greatest gifts we could ever ask for.
-        </p>
+          <h2 class="gift-title">
+            A Little Note About Gifts
+          </h2>
 
-        <p class="gift-copy">
-          If you would like to bless us with a gift, we would sincerely
-          appreciate a <strong>monetary gift</strong> as we begin this
-          new chapter together.
-        </p>
+          <p class="gift-copy">
 
-        <p class="gift-copy">
-          However, if you've chosen something special for us instead,
-          we'd be delighted to receive your thoughtful surprise.
-          Your kindness means the world to us.
-        </p>
+            Your love, prayers, and presence on our
+            special day are the greatest gifts we could
+            ever ask for.
 
-        <div class="heart">
-          ❤️
+            <br><br>
+
+            If you would like to bless us with a gift,
+            we would sincerely appreciate a
+            <strong>monetary gift</strong> as we begin
+            this new chapter together.
+
+            <br><br>
+
+            However, if you've chosen something special
+            for us instead, we'd be delighted to receive
+            your thoughtful surprise. Your kindness means
+            the world to us.
+
+          </p>
+
+          <div class="heart">
+            ♥
+          </div>
+
+          <p style="margin-top:8px; font-style:italic;">
+            Thank you for celebrating with us.
+          </p>
+
         </div>
 
-        <p class="sans" style="font-size:11px; font-style:italic;">
-          Thank you for celebrating with us.
-        </p>
-
       </div>
+
     </section>
 
 
-    <!-- FAQ -->
+    <!-- =====================================================
+         FAQs
+         ===================================================== -->
+
     <section id="faqs" class="section faq-section">
 
-      <div class="container" style="max-width:850px;">
+      <div class="container">
 
-        <div class="center-heading reveal">
+        <div class="center">
 
-          <p class="section-kicker">
+          <p class="section-label">
             Helpful Details
           </p>
 
@@ -1478,274 +1344,245 @@
         <div class="faq-list reveal">
 
 
-          <!-- RSVP RESERVED SEATS -->
-          <article class="faq-item">
-
-            <button class="faq-question" type="button">
-              <span>
-                How many guests can I RSVP for?
-              </span>
-              <i class="faq-icon"></i>
-            </button>
-
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Your invitation has a specific number of reserved seats.
-                  When you search your name in our RSVP, the number of seats
-                  reserved for you will be displayed. Please RSVP only for
-                  the number of guests included in your reservation.
-                </p>
-              </div>
-            </div>
-
-          </article>
-
-
           <!-- CHILDREN -->
-          <article class="faq-item">
+
+          <div class="faq-item">
 
             <button class="faq-question" type="button">
+
               <span>
                 Can I bring my children?
               </span>
-              <i class="faq-icon"></i>
+
+              <span class="faq-icon">
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Absolutely! We love celebrating with families,
-                  and your little ones are welcome to join us.
-                </p>
-              </div>
+
+              <p>
+                Absolutely! We love celebrating with
+                families, and your little ones are welcome
+                to join us.
+              </p>
+
             </div>
 
-          </article>
+          </div>
 
 
           <!-- ADDITIONAL GUESTS -->
-          <article class="faq-item">
+
+          <div class="faq-item">
 
             <button class="faq-question" type="button">
+
               <span>
                 Can I bring additional guests?
               </span>
-              <i class="faq-icon"></i>
+
+              <span class="faq-icon">
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes! We'd be happy to celebrate with them too.
-                  Please let us know in your RSVP how many guests will
-                  be coming and include their names so we can prepare
-                  enough seats and meals.
-                </p>
-              </div>
+
+              <p>
+                Yes! We'd be happy to celebrate with them
+                too. Please let us know in your RSVP how
+                many guests will be coming and include
+                their names so we can prepare enough seats
+                and meals.
+              </p>
+
             </div>
 
-          </article>
+          </div>
 
 
           <!-- DRESS CODE -->
-          <article class="faq-item">
+
+          <div class="faq-item">
 
             <button class="faq-question" type="button">
+
               <span>
                 What should I wear?
               </span>
-              <i class="faq-icon"></i>
+
+              <span class="faq-icon">
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Please come dressed in our wedding color palette.
-                  Kindly avoid wearing white, ivory, or colors that may
-                  closely resemble the bride's attire.
-                </p>
-              </div>
+
+              <p>
+                Please come dressed in our wedding color
+                palette. We kindly ask guests to avoid
+                wearing white, ivory, or colors that may
+                closely resemble the bride's attire.
+              </p>
+
             </div>
 
-          </article>
+          </div>
 
 
           <!-- PARKING -->
-          <article class="faq-item">
+
+          <div class="faq-item">
 
             <button class="faq-question" type="button">
+
               <span>
                 Where can I park?
               </span>
-              <i class="faq-icon"></i>
+
+              <span class="faq-icon">
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Parking is available at the church and at Alfredo's Place.
-                  Additional directions will be provided closer to the
-                  wedding date if needed.
-                </p>
-              </div>
+
+              <p>
+                Parking is available at the church and at
+                Alfredo's Place. Additional directions will
+                be provided closer to the wedding date if
+                needed.
+              </p>
+
             </div>
 
-          </article>
+          </div>
 
 
           <!-- CONTACT -->
-          <article class="faq-item">
+
+          <div class="faq-item">
 
             <button class="faq-question" type="button">
+
               <span>
                 Who can I contact for questions?
               </span>
-              <i class="faq-icon"></i>
+
+              <span class="faq-icon">
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  If you have any questions before the wedding,
-                  feel free to reach out to us through Facebook.
-                </p>
-              </div>
+
+              <p>
+                If you have any questions before the wedding, feel free to reach out to us through Facebook.
+              </p>
+
             </div>
 
-          </article>
+          </div>
 
 
         </div>
+
       </div>
+
     </section>
 
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
   <footer>
 
-    <div class="footer-script">
+    <p class="footer-thank">
       Thank You
-    </div>
+    </p>
 
-    <div class="footer-small">
+    <p class="footer-small">
       See you on
-    </div>
+    </p>
 
-    <div class="footer-date">
+    <p class="footer-date">
       November 14, 2026
-    </div>
+    </p>
 
-    <div class="footer-names">
+    <p class="footer-names">
       Christine & Von
-    </div>
+    </p>
 
   </footer>
 
-</div>
 
+  <!-- =======================================================
+       FAQ JAVASCRIPT
+       ======================================================= -->
 
-<script>
+  <script>
 
-  /* ------------------------------
-     MUSIC
-  ------------------------------ */
+    document.querySelectorAll(".faq-question").forEach(function(button) {
 
-  const music = document.getElementById("backgroundMusic");
-  const musicButton = document.getElementById("musicButton");
-  const musicIcon = document.getElementById("musicIcon");
+      button.addEventListener("click", function() {
 
-  musicButton.addEventListener("click", function () {
+        const item = button.parentElement;
+        const answer = item.querySelector(".faq-answer");
 
-    if (music.paused) {
+        /* Close other FAQ items */
+        document.querySelectorAll(".faq-item").forEach(function(otherItem) {
 
-      music.play()
-        .then(() => {
-          musicButton.classList.add("playing");
-          musicIcon.textContent = "Ⅱ";
-          musicButton.setAttribute("aria-label", "Pause wedding music");
-          musicButton.setAttribute("title", "Pause music");
-        })
-        .catch(() => {
-          alert("Please tap the music button again to play the song.");
+          if (otherItem !== item) {
+
+            otherItem.classList.remove("open");
+
+            const otherAnswer =
+              otherItem.querySelector(".faq-answer");
+
+            otherAnswer.style.maxHeight = null;
+
+          }
+
         });
 
-    } else {
 
-      music.pause();
+        /* Toggle selected FAQ */
 
-      musicButton.classList.remove("playing");
-      musicIcon.textContent = "♪";
-      musicButton.setAttribute("aria-label", "Play wedding music");
-      musicButton.setAttribute("title", "Play music");
+        item.classList.toggle("open");
 
-    }
+        if (item.classList.contains("open")) {
 
-  });
+          answer.style.maxHeight =
+            answer.scrollHeight + "px";
 
+        } else {
 
-  /* ------------------------------
-     FAQ
-  ------------------------------ */
-
-  document.querySelectorAll(".faq-question").forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-      const item = button.closest(".faq-item");
-
-      const currentlyOpen = item.classList.contains("open");
-
-      document.querySelectorAll(".faq-item").forEach(function(otherItem) {
-        otherItem.classList.remove("open");
-      });
-
-      if (!currentlyOpen) {
-        item.classList.add("open");
-      }
-
-    });
-
-  });
-
-
-  /* ------------------------------
-     SCROLL REVEAL
-  ------------------------------ */
-
-  const revealElements = document.querySelectorAll(
-    ".reveal, .reveal-left, .reveal-right"
-  );
-
-  const observer = new IntersectionObserver(
-    function(entries, observer) {
-
-      entries.forEach(function(entry) {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("visible");
-
-          observer.unobserve(entry.target);
+          answer.style.maxHeight = null;
 
         }
 
       });
 
-    },
-    {
-      threshold: 0.12
-    }
-  );
+    });
 
+  </script>
 
-  revealElements.forEach(function(element) {
-    observer.observe(element);
-  });
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="nahanap-kita.mp3" type="audio/mpeg">
+  </audio>
 
-</script>
+  <button id="musicButton" class="music-button" type="button" aria-label="Play our song">
+    ♫ Play Our Song
+  </button>
 
 </body>
 </html>
