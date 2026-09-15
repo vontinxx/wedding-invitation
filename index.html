@@ -360,7 +360,7 @@
 
     .photo-frame {
       position: relative;
-      padding: 12px;
+      padding: 0;
     }
 
     .photo-frame::before {
@@ -368,7 +368,6 @@
       position: absolute;
       inset: 0;
       border: 1px solid var(--rust);
-      transform: translate(-10px, -10px);
       pointer-events: none;
     }
 
@@ -442,7 +441,7 @@
     .detail-time {
       margin-top: 12px;
       font-family: "Montserrat", sans-serif;
-      text-transform: uppercpase;
+      text-transform: uppercase;
       letter-spacing: .14em;
       font-size: 10px;
       font-weight: 700;
@@ -639,6 +638,11 @@
       margin-bottom: 10px;
     }
 
+    .rsvp-deadline {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
     /* =========================================================
        GIFT GUIDE
        ========================================================= */
@@ -800,7 +804,7 @@
     .guest-color.rust { background:#B65A3A; }
     .guest-color.blush { background:#E8C9C5; }
     .guest-color.sage { background:#9A8F72; }
-    .music-button { position:fixed; right:18px; bottom:18px; z-index:1200; border:1px solid var(--rust); background:rgba(247,243,234,.95); color:var(--brown); border-radius:30px; padding:12px 17px; font-family:"Montserrat",sans-serif; font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; box-shadow:0 8px 20px rgba(90,66,51,.12); transition:background 1s ease,color 1s ease,transform 1s ease; }
+    .music-button { position:fixed; right:18px; bottom:18px; z-index:1200; border:1px solid var(--rust); background:rgba(247,243,234,.95); color:var(--brown); border-radius:30px; padding:12px 17px; font-family:"Montserrat",sans-serif; font-size:9px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; transition:.25s ease; }
     .music-button:hover { background:var(--rust); color:white; transform:translateY(-2px); }
     .reveal { opacity:0; transform:translateY(24px); transition:opacity 2.4s ease, transform 2.4s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
@@ -999,30 +1003,16 @@
             <p class="section-label">
               Our Story
             </p>
-
-            <h2>
-              It wasn't always easy, but it was always worth it.
-            </h2>
-
+            <h2>From that first moment, we knew.</h2>
             <div class="story-copy">
-              <p>If there's one thing our journey has taught us, it's that love isn't always about having a perfect story.</p>
-              <p>There were moments that challenged us, seasons that tested us, and times when we had to learn how to grow together instead of apart.</p>
-              <p>But along the way, we built something real.</p>
-              <p>A life filled with memories, laughter, lessons, and love. We've watched each other grow, faced life's challenges side by side, and continued choosing one another through it all.</p>
-              <p>And today, we look back at everything that brought us here with grateful hearts.</p>
-              <p>Because every chapter—the easy ones and the difficult ones—led us to this moment.</p>
-              <p class="story-closing">And we wouldn't change a thing.</p>
-              <p class="story-signature">Christine &amp; Von</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dui lectus, posuere in bibendum ac, mattis in orci. Maecenas ac orci ac lacus sodales luctus. Fusce vehicula, risus nec commodo molestie, magna mi interdum orci, quis varius elit sem elementum nisl.</p>
+              <p class="story-closing">With love,</p>
+              <p class="story-signature">Christine & Von</p>
             </div>
-
           </div>
 
           <div class="photo-frame">
-            <img
-              src="IMG_20251116_130030749_HDR.jpg"
-              alt="Christine and Von"
-              class="couple-photo"
-            >
+            <img src="couple-photo.jpg" alt="Christine and Von" class="couple-photo">
           </div>
 
         </div>
@@ -1033,112 +1023,41 @@
 
 
     <!-- =====================================================
-         WEDDING DETAILS
+         DETAILS
          ===================================================== -->
 
     <section id="details" class="section">
 
       <div class="container">
 
-        <div class="center">
+        <p class="section-label center">
+          Let's Celebrate
+        </p>
+        <h2 class="section-title center">Wedding Details</h2>
 
-          <p class="section-label">
-            The Celebration
-          </p>
+        <div class="details-grid">
 
-          <h2 class="section-title">
-            Wedding Details
-          </h2>
-
-        </div>
-
-
-        <div class="details-grid reveal">
-
-          <!-- CHURCH -->
-
-          <article class="detail-card">
-
-            <img
-              src="nuestra.jpg"
-              alt="National Shrine and Parish of Our Lady of Aranzazu"
-            >
-
+          <div class="detail-card reveal">
+            <img src="ceremony-photo.jpg" alt="Ceremony">
             <div class="detail-content">
-
-              <div class="detail-icon">
-                ♡
-              </div>
-
-              <h3>
-                Ceremony
-              </h3>
-
-              <p class="detail-place">
-                National Shrine and Parish of Our Lady of Aranzazu
-              </p>
-
-              <p class="detail-time">
-                12:30 PM
-              </p>
-
-              <p style="margin-top:8px;">
-                San Mateo, Rizal
-              </p>
-
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=National+Shrine+and+Parish+of+Our+Lady+of+Aranzazu+1850+Gen.+Luna+Ave+San+Mateo+Rizal"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="map-link"
-              >
-                View Maps
-              </a>
-
+              <div class="detail-icon">⛪</div>
+              <h3>Ceremony</h3>
+              <p class="detail-place">National Shrine and Parish of Our Lady of Aranzazu</p>
+              <p class="detail-time">November 14, 2026 · 12:30 PM</p>
+              <a href="#" class="map-link">View Map</a>
             </div>
+          </div>
 
-          </article>
-
-
-          <!-- RECEPTION -->
-
-          <article class="detail-card">
-
-            <img
-              src="alfredo.jpg"
-              alt="Alfredo's Place"
-            >
-
+          <div class="detail-card reveal">
+            <img src="reception-photo.jpg" alt="Reception">
             <div class="detail-content">
-
-              <div class="detail-icon">
-                ❦
-              </div>
-
-              <h3>
-                Reception
-              </h3>
-
-              <p class="detail-place">
-                Alfredo's Place
-              </p>
-
-              <p class="detail-time">
-                Immediately after the ceremony
-              </p>
-
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=P45P%2BXHJ+Alfredo%27s+Place+Maly-Maarang+Rd+Rodriguez+Rizal"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="map-link"
-              >
-                View Maps
-              </a>
-
+              <div class="detail-icon">🍽️</div>
+              <h3>Reception</h3>
+              <p class="detail-place">Reception Venue Name</p>
+              <p class="detail-time">November 14, 2026 · 5:00 PM</p>
+              <a href="#" class="map-link">View Map</a>
             </div>
-
-          </article>
+          </div>
 
         </div>
 
@@ -1148,64 +1067,118 @@
 
 
     <!-- =====================================================
-         DRESS CODE
+         TIMELINE
          ===================================================== -->
 
-    <section id="attire" class="section attire-section">
+    <section class="timeline-section section">
+
       <div class="container">
 
-        <div class="center">
-          <p class="section-label">Dress Code</p>
-          <h2 class="section-title">For the Celebration</h2>
-          <p class="attire-intro">We would love for everyone to complement our warm, elegant wedding palette.</p>
-        </div>
+        <p class="section-label center">Our Journey</p>
+        <h2 class="section-title center">The Big Day</h2>
 
-        <div class="attire-group-title">Principal Sponsors</div>
-        <div class="attire-grid">
-          <div class="attire-card">
-            <h3>Ninongs</h3>
-            <div class="color-row"><span class="color" style="background:#E7D8C5;" title="Beige"></span></div>
-            <p>Beige Barong Tagalog</p>
-          </div>
-          <div class="attire-card">
-            <h3>Ninangs</h3>
-            <div class="color-row">
-              <span class="color" style="background:#EADCC6;" title="Champagne"></span>
-              <span class="color" style="background:#E7D8C5;" title="Beige"></span>
-            </div>
-            <p>Long formal gown or dress</p>
-          </div>
-        </div>
+        <div class="timeline">
 
-        <div class="attire-group-title">Entourage</div>
-        <div class="attire-grid">
-          <div class="attire-card">
-            <h3>Bridesmaids</h3>
-            <div class="color-row"><span class="color" style="background:#B65A3A;" title="Rust / Burnt Orange"></span></div>
-            <p>Rust / Burnt Orange</p>
+          <div class="timeline-item reveal">
+            <div class="timeline-number">1</div>
+            <p class="timeline-time">10:00 AM</p>
+            <p class="timeline-event">Getting Ready</p>
           </div>
-          <div class="attire-card">
-            <h3>Groomsmen</h3>
-            <div class="color-row"><span class="color" style="background:#E7D8C5;" title="Beige"></span></div>
-            <p>Beige Tux</p>
-          </div>
-        </div>
 
-        <div class="attire-group-title">Guests</div>
-        <div class="guest-attire-card attire-card">
-          <p>We invite our guests to come in formal attire inspired by our warm and earthy wedding palette.</p>
-          <div class="guest-color-row">
-            <div><span class="color guest-color champagne"></span><small>Champagne</small></div>
-            <div><span class="color guest-color beige"></span><small>Beige</small></div>
-            <div><span class="color guest-color brown"></span><small>Brown</small></div>
-            <div><span class="color guest-color rust"></span><small>Rust</small></div>
-            <div><span class="color guest-color blush"></span><small>Blush Pink</small></div>
-            <div><span class="color guest-color sage"></span><small>Sage</small></div>
+          <div class="timeline-item reveal">
+            <div class="timeline-number">2</div>
+            <p class="timeline-time">12:30 PM</p>
+            <p class="timeline-event">Ceremony</p>
           </div>
-          <p class="attire-note">Kindly avoid white, ivory, or colors that may closely resemble the bride's attire.</p>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-number">3</div>
+            <p class="timeline-time">3:00 PM</p>
+            <p class="timeline-event">Cocktail Hour</p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-number">4</div>
+            <p class="timeline-time">5:00 PM</p>
+            <p class="timeline-event">Reception & Dinner</p>
+          </div>
+
         </div>
 
       </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ATTIRE
+         ===================================================== -->
+
+    <section id="attire" class="attire-section section">
+
+      <div class="container">
+
+        <h2 class="section-title center">Attire</h2>
+        <p class="attire-intro">Formal attire. Think elegant, think timeless.</p>
+
+        <div class="attire-grid">
+
+          <div class="attire-card reveal">
+            <h3>For Her</h3>
+            <p>Evening gown or cocktail dress</p>
+            <div class="color-row">
+              <div class="color" style="background: #2c2c2c;"></div>
+              <div class="color" style="background: #1a472a;"></div>
+              <div class="color" style="background: #4a2c2a;"></div>
+            </div>
+          </div>
+
+          <div class="attire-card reveal">
+            <h3>For Him</h3>
+            <p>Black tie or dark suit</p>
+            <div class="color-row">
+              <div class="color" style="background: #1a1a1a;"></div>
+              <div class="color" style="background: #2c3e50;"></div>
+              <div class="color" style="background: #34495e;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <h3 class="attire-group-title">For our Distinguished Guests</h3>
+
+        <div class="guest-attire-card reveal">
+          <p style="font-size: 20px; margin-bottom: 20px;">We've chosen these colors to compliment the celebration:</p>
+          <div class="guest-color-row">
+            <div>
+              <div class="guest-color champagne"></div>
+              <small>Champagne</small>
+            </div>
+            <div>
+              <div class="guest-color beige"></div>
+              <small>Beige</small>
+            </div>
+            <div>
+              <div class="guest-color blush"></div>
+              <small>Blush</small>
+            </div>
+            <div>
+              <div class="guest-color rust"></div>
+              <small>Rust</small>
+            </div>
+            <div>
+              <div class="guest-color brown"></div>
+              <small>Brown</small>
+            </div>
+            <div>
+              <div class="guest-color sage"></div>
+              <small>Sage</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </section>
 
 
@@ -1213,49 +1186,20 @@
          RSVP
          ===================================================== -->
 
-    <section id="rsvp" class="section rsvp-section">
+    <section id="rsvp" class="rsvp-section section">
 
       <div class="container">
 
-        <div class="rsvp-box reveal">
+        <div class="rsvp-box">
 
-          <div>
-
-            <p class="section-label">
-              Kindly Reply
-            </p>
-
-            <h2 class="rsvp-title">
-              Will you be joining us?
-            </h2>
-
-            <p class="rsvp-copy">
-              Please let us know if you can celebrate this beautiful day with us on or before October 14, 2026.
-            </p>
-
-            <div class="ornament">
-              ❦
-            </div>
-
+          <div class="reveal">
+            <h2 class="rsvp-title">RSVP</h2>
+            <p class="rsvp-copy">Please RSVP by <span class="rsvp-deadline">October 18, 2026</span></p>
           </div>
 
-
-          <div class="rsvp-card">
-
-            <p>
-              We would be delighted to celebrate
-              with you.
-            </p>
-
-            <a
-              href="https://vontinxx.github.io/Rsvp/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button"
-            >
-              Submit RSVP
-            </a>
-
+          <div class="rsvp-card reveal">
+            <p>We look forward to celebrating with you!</p>
+            <p>Reply at your earliest convenience.</p>
           </div>
 
         </div>
@@ -1271,49 +1215,13 @@
 
     <section class="section">
 
-      <div class="container">
+      <div class="gift-box reveal">
 
-        <div class="gift-box reveal">
+        <h2 class="gift-title">Gifts of Love</h2>
 
-          <p class="section-label">
-            Gift Guide
-          </p>
+        <p class="gift-copy">We're fortunate to have all we need. In lieu of gifts, we'd be grateful for contributions toward our honeymoon fund or a donation to a cause close to our hearts.</p>
 
-          <h2 class="gift-title">
-            A Little Note About Gifts
-          </h2>
-
-          <p class="gift-copy">
-
-            Your love, prayers, and presence on our
-            special day are the greatest gifts we could
-            ever ask for.
-
-            <br><br>
-
-            If you would like to bless us with a gift,
-            we would sincerely appreciate a
-            <strong>monetary gift</strong> as we begin
-            this new chapter together.
-
-            <br><br>
-
-            However, if you've chosen something special
-            for us instead, we'd be delighted to receive
-            your thoughtful surprise. Your kindness means
-            the world to us.
-
-          </p>
-
-          <div class="heart">
-            ♥
-          </div>
-
-          <p style="margin-top:8px; font-style:italic;">
-            Thank you for celebrating with us.
-          </p>
-
-        </div>
+        <div class="heart">♡</div>
 
       </div>
 
@@ -1321,178 +1229,56 @@
 
 
     <!-- =====================================================
-         FAQs
+         FAQ
          ===================================================== -->
 
-    <section id="faqs" class="section faq-section">
+    <section id="faqs" class="faq-section section">
 
       <div class="container">
 
-        <div class="center">
+        <h2 class="section-title center">Frequently Asked Questions</h2>
 
-          <p class="section-label">
-            Helpful Details
-          </p>
-
-          <h2 class="section-title">
-            Frequently Asked Questions
-          </h2>
-
-        </div>
-
-
-        <div class="faq-list reveal">
-
-
-          <!-- CHILDREN -->
+        <div class="faq-list">
 
           <div class="faq-item">
-
-            <button class="faq-question" type="button">
-
-              <span>
-                Can I bring my children?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
+            <button class="faq-question">
+              <span>What should I wear?</span>
+              <span class="faq-icon">+</span>
             </button>
-
             <div class="faq-answer">
-
-              <p>
-                Absolutely! We love celebrating with
-                families, and your little ones are welcome
-                to join us.
-              </p>
-
+              <p>We kindly request formal attire. Black tie or dark formal dress. Please refer to the Attire section for color palette suggestions.</p>
             </div>
-
           </div>
-
-
-          <!-- ADDITIONAL GUESTS -->
 
           <div class="faq-item">
-
-            <button class="faq-question" type="button">
-
-              <span>
-                Can I bring additional guests?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
+            <button class="faq-question">
+              <span>Can I bring a plus one?</span>
+              <span class="faq-icon">+</span>
             </button>
-
             <div class="faq-answer">
-
-              <p>
-                Your invitation has a specific 
-                number of reserved seats. 
-                When you search your name in 
-                our RSVP, the number of seats 
-                reserved for you will be displayed. 
-                
-                Please RSVP only for the number 
-                of guests included in your reservation.
-              </p>
-
+              <p>Only those listed on your invitation are invited to celebrate with us. We appreciate your understanding as we finalize our guest count.</p>
             </div>
-
           </div>
-
-
-          <!-- DRESS CODE -->
 
           <div class="faq-item">
-
-            <button class="faq-question" type="button">
-
-              <span>
-                What should I wear?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
+            <button class="faq-question">
+              <span>What is your gift registry?</span>
+              <span class="faq-icon">+</span>
             </button>
-
             <div class="faq-answer">
-
-              <p>
-                Please come dressed in our wedding color
-                palette. We kindly ask guests to avoid
-                wearing white, ivory, or colors that may
-                closely resemble the bride's attire.
-              </p>
-
+              <p>We don't have a registry. Your presence is the greatest gift. If you wish to give, contributions to our honeymoon or a donation in our name would be meaningful.</p>
             </div>
-
           </div>
-
-
-          <!-- PARKING -->
 
           <div class="faq-item">
-
-            <button class="faq-question" type="button">
-
-              <span>
-                Where can I park?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
+            <button class="faq-question">
+              <span>Will there be accommodations for dietary needs?</span>
+              <span class="faq-icon">+</span>
             </button>
-
             <div class="faq-answer">
-
-              <p>
-                Parking is available at the church and at
-                Alfredo's Place. Additional directions will
-                be provided closer to the wedding date if
-                needed.
-              </p>
-
+              <p>Absolutely. Please indicate any dietary restrictions or preferences when you RSVP, and we'll ensure a delicious meal for everyone.</p>
             </div>
-
           </div>
-
-
-          <!-- CONTACT -->
-
-          <div class="faq-item">
-
-            <button class="faq-question" type="button">
-
-              <span>
-                Who can I contact for questions?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
-            </button>
-
-            <div class="faq-answer">
-
-              <p>
-                If you have any questions before the wedding, feel free to reach out to us through Facebook.
-              </p>
-
-            </div>
-
-          </div>
-
 
         </div>
 
@@ -1509,155 +1295,62 @@
 
   <footer>
 
-    <p class="footer-thank">
-      Thank You
-    </p>
-
-    <p class="footer-small">
-      See you on
-    </p>
-
-    <p class="footer-date">
-      November 14, 2026
-    </p>
-
-    <p class="footer-names">
-      Christine & Von
-    </p>
+    <p class="footer-thank">Thank you</p>
+    <p class="footer-small">For celebrating with us</p>
+    <p class="footer-date">November 14, 2026</p>
+    <p class="footer-names">Christine & Von</p>
 
   </footer>
 
-
-  <!-- =======================================================
-       FAQ JAVASCRIPT
-       ======================================================= -->
+  <button class="music-button">🎵 Music</button>
 
   <script>
-
-    document.querySelectorAll(".faq-question").forEach(function(button) {
-
-      button.addEventListener("click", function() {
-
-        const item = button.parentElement;
-        const answer = item.querySelector(".faq-answer");
-
-        /* Close other FAQ items */
-        document.querySelectorAll(".faq-item").forEach(function(otherItem) {
-
-          if (otherItem !== item) {
-
-            otherItem.classList.remove("open");
-
-            const otherAnswer =
-              otherItem.querySelector(".faq-answer");
-
-            otherAnswer.style.maxHeight = null;
-
-          }
-
-        });
-
-
-        /* Toggle selected FAQ */
-
-        item.classList.toggle("open");
-
-        if (item.classList.contains("open")) {
-
-          answer.style.maxHeight =
-            answer.scrollHeight + "px";
-
+    // FAQ Accordion functionality
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        faqItem.classList.toggle('open');
+        
+        const answer = faqItem.querySelector('.faq-answer');
+        if (faqItem.classList.contains('open')) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
         } else {
-
-          answer.style.maxHeight = null;
-
+          answer.style.maxHeight = '0';
         }
-
       });
-
     });
 
-  </script>
-
-  <audio id="weddingMusic" loop preload="auto">
-    <source src="./nahanap-kita.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="musicButton" class="music-button" type="button" aria-label="Play our song">
-    ♫ Play Our Song
-  </button>
-
-  <script>
-    /* =======================================================
-       MUSIC PLAYER
-       ======================================================= */
-    const weddingMusic = document.getElementById("weddingMusic");
-    const musicButton = document.getElementById("musicButton");
-
-    function setMusicButtonPlaying(isPlaying) {
-      if (isPlaying) {
-        musicButton.textContent = "Ⅱ Pause Our Song";
-        musicButton.setAttribute("aria-label", "Pause our song");
-        musicButton.classList.add("playing");
-      } else {
-        musicButton.textContent = "♫ Play Our Song";
-        musicButton.setAttribute("aria-label", "Play our song");
-        musicButton.classList.remove("playing");
-      }
-    }
-
-    musicButton.addEventListener("click", function () {
-      if (weddingMusic.paused) {
-        weddingMusic.play()
-          .then(function () {
-            setMusicButtonPlaying(true);
-          })
-          .catch(function (error) {
-            console.error("Music could not be played:", error);
-            alert("The song could not be played. Please tap the button again.");
-          });
-      } else {
-        weddingMusic.pause();
-        setMusicButtonPlaying(false);
-      }
-    });
-
-    weddingMusic.addEventListener("play", function () {
-      setMusicButtonPlaying(true);
-    });
-
-    weddingMusic.addEventListener("pause", function () {
-      setMusicButtonPlaying(false);
-    });
-
-    weddingMusic.addEventListener("error", function () {
-      console.error("Unable to load nahanap-kita.mp3", weddingMusic.error);
-    });
-
-
-    /* =======================================================
-       SCROLL REVEAL
-       ======================================================= */
-    const revealElements = document.querySelectorAll(".reveal");
-
-  const revealObserver = new IntersectionObserver(
-    function(entries, observer) {
-      entries.forEach(function(entry) {
+    // Intersection Observer for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          entry.target.classList.add('visible');
         }
       });
-    },
-    {
-      threshold: 0.12
-    }
-  );
+    }, { threshold: 0.1 });
 
-  revealElements.forEach(function(element) {
-    revealObserver.observe(element);
-  });
-</script>
+    document.querySelectorAll('.reveal').forEach(element => {
+      observer.observe(element);
+    });
+
+    // Music button functionality
+    const musicButton = document.querySelector('.music-button');
+    let isPlaying = false;
+
+    musicButton.addEventListener('click', function() {
+      if (!isPlaying) {
+        // Add your music playing logic here
+        console.log('Music started');
+        isPlaying = true;
+        musicButton.textContent = '⏸ Music';
+      } else {
+        // Add your music stopping logic here
+        console.log('Music stopped');
+        isPlaying = false;
+        musicButton.textContent = '🎵 Music';
+      }
+    });
+  </script>
 
 </body>
 </html>
